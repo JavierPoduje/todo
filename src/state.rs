@@ -5,8 +5,8 @@ use serde_json::json;
 use serde_json::value::Value;
 use serde_json::Map;
 
-pub fn read_file(file_name: &str) -> Map<String, Value> {
-    let mut file = File::open(file_name.to_string()).unwrap();
+pub fn read_file(file_name: String) -> Map<String, Value> {
+    let mut file = File::open(file_name).unwrap();
     let mut data = String::new();
     file.read_to_string(&mut data).unwrap();
     let json: Value = serde_json::from_str(&data).unwrap();

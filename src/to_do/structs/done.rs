@@ -8,9 +8,9 @@ pub struct Done {
 }
 
 impl Done {
-    pub fn new(input_title: &str) -> Self {
+    pub fn new(input_title: String) -> Self {
         let input_status: String = String::from("done");
-        let base: Base = Base::new(input_title, "done");
+        let base: Base = Base::new(input_title, input_status);
         return Self { super_struct: base };
     }
 }
